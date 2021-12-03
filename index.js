@@ -4,6 +4,11 @@ const bodyparser = require("body-parser")
 const Joi = require("joi")
 const Cab = require("./db/cabs/cab")
 
+const booking_api = require("./booking_api")
+
+app.use("/booking", booking_api)
+
+
 const URI = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000"
 
 app.use(bodyparser.json())
